@@ -222,4 +222,15 @@ class Client
 
         return $relations;
     }
+
+    /**
+     * @param $identification
+     * @param $password
+     * @return array
+     */
+    public function getToken($identification, $password)
+    { 
+        return $this->request('post', 'token', ['json' => compact('identification', 'password')]);
+    }
+
 }
